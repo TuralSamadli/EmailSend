@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Models\Contact;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +20,5 @@ Route::get('/', function () {
 });
 Route::get('/mail-send', [TestController::class,'mailSend'])->name('mail');
 Route::get('/contact', [TestController::class,'index']);
+Route::post('/contact', [TestController::class,'store']);
 

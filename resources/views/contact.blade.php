@@ -7,15 +7,15 @@
     <title>Users</title>
 </head>
 <body>
-    <table>
+    <table style="solid black">
         <tr>
           <th>Ad</th>
           <th>Soyad</th> 
           <th>Send Mail</th>
         </tr>
         <tr>
-          <td>Tural</td>
-          <td>Samadli</td> 
+          <td>{{$user->Name}}</td>
+          <td>{{$user->Surname}}</td> 
           <td>  <a href= "{{route('mail')}}"    type="button">> Send Mail </a></td>
         </tr>
         
