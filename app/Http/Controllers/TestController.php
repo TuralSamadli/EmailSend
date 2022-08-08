@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+use App\Models\Contact;
 
 
 class TestController extends Controller
@@ -26,5 +27,9 @@ class TestController extends Controller
 'message'=> 'Mail has sent.'
 
         ], Response::HTTP_OK);
+    }
+    public function store(){
+        $user = Contact::where('id',1)->first();
+        return view('contact',compact('user'));
     }
 }
