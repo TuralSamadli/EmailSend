@@ -14,8 +14,8 @@
           <th>Send Mail</th>
         </tr>
         <tr>
-          <td>{{$user->Name}}</td>
-          <td>{{$user->Surname}}</td> 
+          <td>{{$user->name}}</td>
+          <td>{{$user->email}}</td> 
           <td>  <a href= "{{route('mail')}}"    type="button">> Send Mail </a></td>
         </tr>
         

@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use App\Models\Contact;
+use App\Models\User;
 
 
 class TestController extends Controller
@@ -29,7 +30,7 @@ class TestController extends Controller
         ], Response::HTTP_OK);
     }
     public function store(){
-        $user = Contact::where('id',1)->first();
+        $user = Contact::where('id',1)->get();
         return view('contact',compact('user'));
     }
 }
