@@ -17,12 +17,13 @@ class TestController extends Controller
         return view('contact');
     }
     public function mailSend(){
-        $email= 'mail@hotmail.com';
+        $user = Contact::where('id',1)->first();
+
         $mailInfo=[
             'title'=>'Hello User',
             'body' => 'This is for testing email using smtp'
         ];
-        Mail::to($email)->send(new TestMail($mailInfo));
+        Mail::To($user->email)->send(new TestMail($mailInfo));
 
         return response()->json([
 'message'=> 'Mail has sent.'
@@ -30,7 +31,7 @@ class TestController extends Controller
         ], Response::HTTP_OK);
     }
     public function store(){
-        $user = Contact::where('id',1)->get();
+        $user = Contact::where('id',1)->first();
         return view('contact',compact('user'));
     }
 }
